@@ -249,8 +249,10 @@ function displayWrongAnswers (index) {
     const labels = document.querySelectorAll('.label-text');
     let checkArrayAnswer = String(questions[index].correctAnswer);
 
-    labels.forEach(el => {
-        if (checkArrayAnswer === el.textContent) {
+    labels.forEach((el, i) => {
+        console.log(checkArrayAnswer + ' ' + el.textContent)
+
+        if (checkArrayAnswer.includes(el.textContent)) {
             el.classList.add('correct');
             const inputField = document.querySelectorAll('.input-field');
 
